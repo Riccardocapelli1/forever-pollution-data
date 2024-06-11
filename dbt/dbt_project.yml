@@ -1,4 +1,4 @@
-name: "forever-pollution-data"
+name: "forever_pollution_data"
 
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
@@ -9,4 +9,4 @@ clean-targets: ["target", "dbt_modules", "dbt_packages"]
 macro-paths: ["macros"]
 log-path: "logs"
 
-profile: "forever-pollution-data"
+profile: "pollution_data"

@@ -1,4 +1,4 @@
-forever-pollution-data:
+pollution_data:
   target: dev
   outputs:
    dev:

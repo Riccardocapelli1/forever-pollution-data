@@ -27,7 +27,7 @@ jobs:
         cp dbt/target/manifest.json docs/manifest.json
         cp dbt/target/catalog.json docs/catalog.json
         cp dbt/target/index.html docs/index.html
-        cp dbt/target/ target/
+        cp -r dbt/target/ target/
         ghp-import -n -p -f docs/
       env:
         DBT_PROJECT_DIR: ./dbt

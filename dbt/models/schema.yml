@@ -6,7 +6,7 @@ sources:
     tables:
       - name: pollution-data
         meta:
-          external_location: "read_parquet('https://lucmartinon.gitlab.io/ffp-data/full.parquet')"
+          external_location: "read_parquet('./data/full.parquet')"
           formatter: oldstyle
   - name: external_source
     tables:

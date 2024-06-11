@@ -18,11 +18,17 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: "3.11"
-    - name: Install dependencies
+    - name: Install dependencies 1
       run: pip install -r requirements.txt
-    - name: Deploy dbt docs
+    - name: Install dependencies 2
+      uses: opt-nc/setup-duckdb-action@v1.0.7
+      with:
+        version: v1.0.0
+    - name: Run dbt
       run: |
         dbt build
+    - name: Deploy dbt docs
+      run: |
         dbt docs generate
         mkdir docs
         cp dbt/target/manifest.json docs/manifest.json

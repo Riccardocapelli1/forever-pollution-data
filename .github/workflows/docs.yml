@@ -29,6 +29,9 @@ jobs:
         cp dbt/target/index.html docs/index.html
         cp -r dbt/target/ target/
         ghp-import -n -p -f docs/
+      env:
+        DBT_PROJECT_DIR: ./dbt
+        DBT_PROFILES_DIR: ./dbt_profiles
     - name: Run dbt
       run: |
         dbt run

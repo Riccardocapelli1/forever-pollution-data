@@ -1,4 +1,6 @@
 
+{{ config(materialized='external', location='./data-transform/present/pollution-regression.parquet', format='parquet')}}
+
 
 with 
 pollution_data as (

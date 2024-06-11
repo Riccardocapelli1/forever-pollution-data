@@ -32,7 +32,8 @@ jobs:
         DBT_PROJECT_DIR: ./dbt
         DBT_PROFILES_DIR: ./dbt_profiles
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v4
       with:
-        publish_dir: ./target
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public

@@ -1,0 +1,32 @@
+version: 2
+
+### STAGE
+sources:
+  - name: external_source
+    tables:
+      - name: pollution-data
+        meta:
+          external_location: "read_parquet('https://lucmartinon.gitlab.io/ffp-data/full.parquet')"
+          formatter: oldstyle
+  - name: external_source
+    tables:
+      - name: worldcities
+        meta:
+          external_location: "read_csv_auto('./data/worldcities.csv', header=True)"
+          formatter: oldstyle
+
+models:
+  - name: pollution-data-raw
+    description: "A starter dbt model"
+  - name: world-cities-raw
+    description: "A starter dbt model"
+  - name: pollution-data
+    description: "A starter dbt model"
+  - name: world-cities
+    description: "A starter dbt model"
+  - name: regional-pollution
+    description: "A starter dbt model"
+  - name: regional-pollution-reg-null
+    description: "A starter dbt model"
+  - name: pollution-regression
+    description: "A starter dbt model"

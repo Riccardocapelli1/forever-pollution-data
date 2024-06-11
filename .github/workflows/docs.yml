@@ -20,13 +20,6 @@ jobs:
         python-version: "3.11"
     - name: Install dependencies 1
       run: pip install -r requirements.txt
-    - name: Install dependencies 2
-      uses: opt-nc/setup-duckdb-action@v1.0.7
-      with:
-        version: v1.0.0
-    - name: Run dbt
-      run: |
-        dbt build
     - name: Deploy dbt docs
       run: |
         dbt docs generate
@@ -36,6 +29,9 @@ jobs:
         cp dbt/target/index.html docs/index.html
         cp -r dbt/target/ target/
         ghp-import -n -p -f docs/
+    - name: Run dbt
+      run: |
+        dbt run
       env:
         DBT_PROJECT_DIR: ./dbt
         DBT_PROFILES_DIR: ./dbt_profiles

@@ -27,6 +27,7 @@ jobs:
         cp dbt/target/manifest.json docs/manifest.json
         cp dbt/target/catalog.json docs/catalog.json
         cp dbt/target/index.html docs/index.html
+        cp dbt/target/ target/
         ghp-import -n -p -f docs/
       env:
         DBT_PROJECT_DIR: ./dbt
@@ -36,4 +37,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+        publish_dir: ./target/

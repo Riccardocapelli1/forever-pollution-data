@@ -1,6 +1,4 @@
---
---{{ config(materialized='external', location='./data-transform/transform/worldcities.csv', format='csv')}}
---
+
 
 with worldcities as (
    select * from {{ ref('world-cities-raw') }} 

@@ -1,6 +1,4 @@
---
---{{ config(materialized='external', location='./data-transform/present/regional-pollution.csv', format='csv')}}
---
+
 
 with 
 pollution_data as (

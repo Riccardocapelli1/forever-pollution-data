@@ -1,6 +1,3 @@
---
---{{ config(materialized='external', location='./data-transform/transform/pollution-data.csv', format='csv')}}
---
 
 with pollution_data as (
    select * from {{ ref('pollution-data-raw') }} 

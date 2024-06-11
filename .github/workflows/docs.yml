@@ -22,6 +22,7 @@ jobs:
       run: pip install -r requirements.txt
     - name: Deploy dbt docs
       run: |
+        dbt build
         dbt docs generate
         mkdir docs
         cp dbt/target/manifest.json docs/manifest.json

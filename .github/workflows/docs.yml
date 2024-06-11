@@ -23,7 +23,7 @@ jobs:
     - name: Deploy dbt docs
       run: |
         dbt debug
-        dbt run
+#        dbt run
         dbt docs generate
         mkdir docs
         cp dbt/target/manifest.json docs/manifest.json

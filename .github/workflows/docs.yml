@@ -14,13 +14,18 @@ jobs:
     steps:
     - name: Checkout main
       uses: actions/checkout@v4
+      with:
+        repository: jcdan3/devops
+        token: ${{ secrets.GITHUB_TOKEN }}
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
         python-version: "3.11"
     - name: Install dependencies
       run: pip install -r requirements.txt
-      
+
+    - name: Run duckdb data extract
+      run: python ./duckdb-extract/duckdb-extract.py
     - name: Deploy dbt docs
       run: |
         dbt docs generate

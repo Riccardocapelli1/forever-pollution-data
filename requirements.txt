@@ -1,4 +1,5 @@
-dbt-core
+dbt-core==1.8.1
 dbt-duckdb
 ghp-import
 polars
+duckdb==1.0.0

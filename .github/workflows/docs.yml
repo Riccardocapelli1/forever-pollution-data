@@ -54,7 +54,7 @@ on:
   push:
     paths-ignore:
       - 'docs/**'
-      - 'data/**'
+      - 'data/full.parquet'
     - name: Commit and push changes
       run: |
         git config --global user.name "github-actions[bot]"

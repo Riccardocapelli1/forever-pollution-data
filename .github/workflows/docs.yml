@@ -50,6 +50,11 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./target/
 
+on:
+  push:
+    paths-ignore:
+      - 'docs/**'
+      - 'data/**'
     - name: Commit and push changes
       run: |
         git config --global user.name "github-actions[bot]"
